@@ -55,7 +55,7 @@ try {
         $apiResponse.PSObject.Properties | ForEach-Object {
             $ConfigVariableName = "LEAP_$($_.Name)"
             $ConfigVariableValue = $_.Value
-            #Write-Output "::add-mask::$ConfigVariableValue" 
+            Write-Output "::add-mask::$ConfigVariableValue" 
             Write-Output "$ConfigVariableName=$ConfigVariableValue" >> $env:GITHUB_ENV
         }
         
